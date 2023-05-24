@@ -1,0 +1,54 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Books</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include custom CSS file (create this file in your static folder) -->
+    <link rel="stylesheet" href="{% static 'css/custom_styles.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <!-- Add your navigation bar here -->
+
+    <!-- Hero section -->
+    <!-- Add your hero section with a banner and a call-to-action button here -->
+
+    <!-- Categories -->
+    <!-- Add the categories section here -->
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-4 book-card">
+                        <img src="{{ book.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">{{ book.author }}</p>
+                            <p class="card-text">${{ book.price }}</p>
+                            <!-- Add a link to the individual book detail page (to be created) -->
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    <!-- Pagination -->
+    <!-- Add the pagination section here -->
+
+    <!-- Footer -->
+    <!-- Add your footer here -->
+
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
